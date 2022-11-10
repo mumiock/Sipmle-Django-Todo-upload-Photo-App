@@ -1,0 +1,66 @@
+{% extends 'info/base.html' %}
+
+{% block title %}
+<title>Photo list</title>
+{% endblock %}
+
+{% block content %}
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+
+      <a class="navbar-brand mr-1" href="{% url 'home' %}">Home</a>
+
+</nav>
+<div class="container">
+
+  <!-- title row -->
+  <div class="row">
+    <div class="offset-md-2 col-lg-9">
+      <div class="page-header">
+        <h1>
+          Photo List
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add a Photo row -->
+  <div class="row">
+    <div class="offset-md-2 col-lg-9">
+      <form method="post" action="{% url 'photo_add' request.user.username %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row">
+        
+          <div class="col-md-6">
+           
+            <input type="file" name="image" accept="image/*" required id="id_image">
+            
+          </div> 
+          <div class="col-md-6">
+            <button type="submit" name="submit" class="btn btn-outline-primary">
+              Add
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <hr />
+
+  <!-- Photo list row -->
+  <div class="row">
+    <div class="offset-md-2 col-lg-6">
+      <div class="list-group">
+        {% for photo in photo_list %}
+        <div class="list-group-item">
+         
+          <img style='display:block; max-width:500px; max-height:500px; '  src="{{ photo.image }}"alt=""/>
+          <a href="{% url 'photo_delete' photo_id=photo.id username=request.user.username %}" title="photo_Delete">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
