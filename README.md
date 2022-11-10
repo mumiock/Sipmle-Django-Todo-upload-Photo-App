@@ -36,4 +36,4 @@ python manage.py runserver
 
 Once the server is hosted, head over to http://127.0.0.1:8000/ for the App.
 
-Since you are not yet a user, you will be redirected to the Sign Up page.  By filling out the form that opens, you will be directed to the Login page after registering. When you fill out the login page with your user information, you will reach the Homepage page opened for you. On this page, you can list, add, update, or delete things to do using the todo tab. On the second tab, the Photos tab, you can add or delete photos you want to save. Enjoy Tamemen is an open source code :)
+Since you are not yet a user, you will be redirected to the Sign Up page.  By filling out the form that opens, you will be directed to the Login page after registering. When you fill out the login page with your user information, you will reach the Homepage page opened for you. On this page, you can list, add, update, or delete things to do using the todo tab. On the second tab, the Photos tab, you can add or delete photos you want to save. Enjoy it is completely open source code :)
