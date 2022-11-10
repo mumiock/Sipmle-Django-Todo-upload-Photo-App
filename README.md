@@ -31,7 +31,7 @@ python manage.py createsuperuser
 To run this app, open terminal in that folder and run the following command.
 
 ```bash
-$ python manage.py runserver
+python manage.py runserver
 ```
 
 Once the server is hosted, head over to http://127.0.0.1:8000/ for the App.
